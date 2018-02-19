@@ -1,0 +1,57 @@
+
+<ui:composition template="/WEB-INF/template/TemplatePadrao.xhtml" 
+	xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui">
+	
+	<ui:define name="titulo-pagina">Registro de OS</ui:define>
+
+	<ui:define name="conteudo">
+		<h:form id="frm">
+			<p:growl autoUpdate="true" />
+			<p:panelGrid columns="2" id="painel" style="width: 100%; margin-top: 0px;"
+				columnClasses="rotulo,campo" styleClass="sem-bordas painel-compacto">
+				
+				<p:outputLabel value="Nome" for="nome"/>
+				<p:inputText id="nome" size="60" maxlength="60" required="true"/>
+				
+				<p:outputLabel value="Departamento" for="departamento"/>
+				<p:selectOneMenu id="departamento">
+					<f:selectItem itemLabel="Selecione um departamento"/>
+				</p:selectOneMenu>
+				
+				<p:outputLabel value="Ramal" for="ramal"/>
+				<p:inputText id="ramal" size="30" maxlength="15"/>
+				
+				<p:outputLabel value="Local do suporte" for="localSuporte"/>
+				<p:inputText id="localSuporte" size="60" maxlength="60"/>	
+				
+				<p:outputLabel value="Data abertura"/>
+				<p:calendar/>
+				
+				<p:outputLabel value="Descrição do problema" for="descricaoProblema"/>
+				<h:panelGroup>
+					<p:inputTextarea id="descricaoProblema" cols="62" rows="6" maxlength="200"
+						 autoResize="false" counter="counter"
+						 counterTemplate="Restam {0} caracteres"/>	
+					<br/>
+					<h:outputText id="counter"/>
+				</h:panelGroup>	
+				
+				<p:outputLabel value="Status do chamado" for="statusChamado"/>
+				<p:selectOneMenu id="statusChamado">
+					<f:selectItem itemLabel="Não iniciado"/>
+				</p:selectOneMenu>
+				
+				<h:panelGroup/>
+				<h:panelGroup>
+					<p:commandButton value="Salvar" style="width: 20%; margin-right: 5%; margin-top: 20px !important;"/>		
+					<p:button value="Cancelar" style="width: 20%;"/>			
+				</h:panelGroup>
+			</p:panelGrid>
+		</h:form>
+	</ui:define>
+</ui:composition>
+

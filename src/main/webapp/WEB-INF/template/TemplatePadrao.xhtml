@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui">
+		
+<h:head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<title><ui:insert name="titulo">Heip Desk TI</ui:insert></title>
+	<h:outputStylesheet library="css" name="sistema.css"/>
+	<h:outputStylesheet library="css" name="#{temasBean.tema.nomeTema}.css"/>
+</h:head>
+
+<h:body>
+	<!-- BARRA DE CABEÇALHO - INICIO -->
+	<header id="cabecalho">
+		
+		<!-- LOGO DA EMPRESA - INICIO -->
+		<div id="logo">
+			<h:link outcome="/Home">
+				<p:graphicImage library="images" name="logo.png" alt="Inserir logo da empresa" style="width: 250px; height: 60px;"/>
+			</h:link>
+		</div>
+		<!-- LOGO DA EMPRESA - FIM -->
+		
+		
+		
+		<!-- BARRA DE MUNUS LADO DIREITO SUPERIOR -INICIO -->
+		<div class="barra-menu" >
+			Usuário logado: JONES QUITO<br/>
+			<h:form id="frm-menu">
+				<p:menubar style="float: right;" styleClass="itens-menu">
+					<p:submenu label="Cadastros">
+						<p:menuitem value="Chamado / OS" outcome="/chamados/RegistroOS"/>
+						<p:menuitem value="Novo serviço de TI"/>
+						<p:menuitem value="Novo mensagem"/>
+						<p:menuitem value="Patrimônio de TI"/>
+					</p:submenu>
+					<p:submenu label="Consultas">
+						<p:menuitem value="Listar chamados/OS" outcome="/chamados/PesquisaOS"/>
+						<p:menuitem value="Serviços de TI"/>
+						<p:menuitem value="Mensagens"/>
+						<p:menuitem value="Listar serviços de TI"/>
+					</p:submenu>
+					<p:submenu label="Configurações">
+						<p:menuitem value="Logo"/>
+						<p:menuitem value="Temas..." onclick="alterarTemaDialog.show(); return false;" />
+					</p:submenu>
+					<p:menuitem value="Sair" icon="ui-icon-power" />
+				</p:menubar>
+			</h:form>
+		</div>
+		<!-- BARRA DE MUNUS LADO DIREITO SUPERIOR -FIM -->
+
+		<div style=" margin-top: 75px; color: black;">
+			<h:link id="home-button" outcome="/Home">
+				<p:graphicImage library="images" name="home.png" title="Home"/>
+			</h:link>
+			
+			<h1 style="text-align: center; padding: 2px;"><ui:insert name="titulo-pagina">Título da página</ui:insert></h1>
+			<p:separator/>
+		</div>
+		
+	</header>
+	<!-- BARRA DE CABEÇALHO - FIM -->
+	
+	
+	
+	<div id="corpo" style="margin-top: 40px; padding: 0px;">
+		<p:layout style="min-width:400px; min-height:390px;">
+			<!-- INÍCIO DO MENU LATERAL -->
+		    <p:layoutUnit position="west" size="300">
+				 
+		        <ui:insert name="menu-esquerdo">
+		        	<h:form>
+    					<p:growl id="messages" showDetail="true"/>
+
+    					<div class="largura">
+    						<ui:insert name="botoes"/>
+    					</div>
+    					
+					    <p:panelMenu style="width:180px" styleClass="largura-menu">
+					    	<p:menuitem value="Home"/>
+					        <p:submenu label="Chamados - OS" icon="ui-icon-refresh">
+					            <p:menuitem value="Novo" outcome="/chamados/RegistroOS"/>
+					            <p:menuitem value="Meus chamados" outcome="/chamados/HistoricoOS"/>
+					            <p:menuitem value="Ver todos" outcome="/chamados/PesquisaOS"/>
+					        </p:submenu>
+					        <p:submenu label="Catálogo de serviços" icon="ui-icon-newwin">
+					            <p:menuitem value="Novo"/>
+					            <p:menuitem value="Listar todos"/>
+					        </p:submenu>
+					        <p:separator/>
+						    <p:submenu label="Patrimônio">
+				                <p:menuitem value="Inserir novo patrimônio"/>
+				                <p:menuitem value="Consultar patrimônio" />
+					        </p:submenu>
+					        <p:separator/>
+					        <p:submenu label="Mensagens" icon="ui-icon-mail-closed">
+				                <p:menuitem value="Nova mensagem" onclick="registroMensagemDialog.show(); return false;"/>
+				                <p:menuitem value="Direcionadas a mim" />
+				                <p:menuitem value="De minha autoria" />
+					        </p:submenu>
+					        <p:submenu label="Ajustes">
+				                <p:menuitem value="Alterar logo"/>
+				                <p:menuitem value="Escolher novo tema" onclick="alterarTemaDialog.show(); return false;" />
+				                <p:menuitem value="Sair"/>
+					        </p:submenu>
+					    </p:panelMenu>
+					    
+					    <p:separator/>
+					    <a href="#"></a>
+					    <h:link value="Gráficos" outcome="/Home" style="padding: 12px; font-size: 12pt; font-weight: bold; color: blue;"/>
+					</h:form>
+		        </ui:insert>
+		        
+		    </p:layoutUnit> 
+		    <!-- FIM DO MENU LATERAL -->
+		 
+		 	<!-- INÍCIO DO CONTEÚDO -->
+		    <p:layoutUnit position="center" >
+		        <ui:insert name="conteudo"/>
+		    </p:layoutUnit>
+		    <!-- FIM DO CONTEÚDO -->
+		</p:layout>
+	</div>
+	
+	
+	<p:separator/>
+	<footer>
+		Sistema de Gerenciamento de Help Desk<br/>
+		By Jones Quito
+	</footer>
+	
+	
+	<!-- DIÁLOGO PARA ESCOLHA DO TEMA -->
+	<p:dialog header="Escolher tema" widgetVar="alterarTemaDialog" resizable="false"
+		modal="true">
+		<h:form id="frmDialog">
+			<p:panelGrid columns="2" styleClass="sem-bordas">
+				<p:outputLabel value="Temas" style="margin-right: 40px;"/>
+				<p:selectOneMenu value="#{temasBean.tema}" var="t">
+					 <f:selectItems value="#{temasBean.temas}" var="tema" itemLabel="#{tema.nomeTema}" itemValue="#{tema}"/>
+					 <p:column>
+					 	<h:outputText value="#{t.descricao}"/>
+					 </p:column>
+					 <p:column>
+					 	<p:graphicImage library="images" name="#{t.iconeTema}.png" style="height: 50px;"/>
+					 </p:column>
+				</p:selectOneMenu>
+			</p:panelGrid>
+			
+			<p:separator style="margin-top:15px;"/>
+			
+			<p:panelGrid columns="2" styleClass="sem-bordas" >
+				<p:commandButton value="Atualizar" action="#{temasBean.atualizar}" update="@all"/>
+				<p:button value="Cancelar"/>
+			</p:panelGrid>
+		</h:form>
+	</p:dialog>
+	
+	<!-- DIÁLOGO PARA MENSAGEM -->
+	<p:dialog header="Escolher tema" widgetVar="registroMensagemDialog" resizable="false"
+		modal="true">
+		<h:form>
+			<p:panelGrid columns="2" styleClass="sem-bordas">
+				<p:outputLabel value="Responsável"/>
+				<h:outputText value="Jones Quito"/>
+				
+				<p:outputLabel value="Data"/>
+				<p:calendar readonly="true"/>
+				
+				<p:spacer/>
+				
+				<h:panelGroup>
+					<p:commandButton value="Atualizar"/>
+					<p:button value="Cancelar"/>
+				</h:panelGroup>
+			</p:panelGrid>
+		</h:form>
+	</p:dialog>
+</h:body>
+</html>
+

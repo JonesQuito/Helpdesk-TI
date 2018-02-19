@@ -1,0 +1,55 @@
+
+<ui:composition template="/WEB-INF/template/TemplatePadrao.xhtml" 
+	xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui">
+	
+	<ui:define name="titulo-pagina">Histórico de OS</ui:define>
+	
+	<ui:define name="botoes">
+		<p:fieldset style="margin-bottom:20px">
+        <h:panelGrid columns="2" cellpadding="5">
+        	<p:outputLabel value="Número da OS"/>
+            <h:outputText value="201710001" />
+            
+            <p:outputLabel value="Abertura"/>
+            <h:outputText value="21/01/2017" />
+            
+            <p:outputLabel value="Idade(hs)"/>
+            <h:outputText value="19" />
+            
+            <p:outputLabel value="Status"/>
+            <h:outputText value="Concluída" />
+        </h:panelGrid>
+        <p:button value="Atualizar OS" styleClass="largura" style="margin-left: 8px; height: 40px;"/>
+    </p:fieldset>
+	</ui:define>
+	
+	<ui:define name="conteudo">
+		<h:form id="frm">
+			<div class="tratativas">
+				<ui:repeat var="numero" value="#{historicoOSBean.listaChamados}">
+					<p:panel header="Tratativa 01 - Data: 11/10/2017  10:32  -  Responsável: Jones Quito"
+							toggleable="true" closable="false" collapsed="true" toggleSpeed="500" 
+							closeSpeed="500" style="margin-bottom:20px">
+				         
+				         
+				         
+				         
+				        
+				        <h:outputText value="O computador não pode ser substituído em virtude de o colaborador
+				        					Marcos Leandro encontrar-se de férias. Devido a necessidade de
+				        					assinatura do termo de responsabilidade aguardaremos o retorno
+				        					do colaborador"/>
+		    		</p:panel>
+				</ui:repeat>
+			</div>
+    		
+		</h:form>
+	</ui:define>
+		
+
+</ui:composition>
+

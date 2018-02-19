@@ -1,0 +1,157 @@
+@charset "utf-8";
+
+body {
+	font-size: 11pt;
+	font-family: Arial, Helvetica, sans-serif;
+	margin: 0px;
+	font-weight: normal;
+}
+
+
+h1{
+	font-size: 24px;
+	font-weight: 500;
+	padding: 5px;
+	margin: 0px;
+}
+
+
+header{
+	padding: 5px 0px;
+	margin-bottom: 0px;
+	height: 70px;
+	background-color: #B24926;
+	color: #fff;
+	box-shadow: 0px 2px 2px #ccc;
+}
+
+
+
+
+#home-button{
+	float: left;
+	margin-top: 3px;
+	margin-left: 7px;
+	padding: 0px;
+	/*background-color: #C9C9C9;*/
+	background-color: #FAA523 !important;
+	border-radius: 4px;
+}
+
+
+.ui-layout-unit-content{
+/*
+	configura o conteúdo do layout-unit
+*/
+}
+
+
+
+.ui-menubar{
+	background-color: #FAA523;
+}
+
+
+.ui-slidemenu{
+	background-color: #FAA523;
+	width: 95% !important;
+	margin: auto;
+}
+
+
+.ui-panelmenu-header{
+	background-color: #FAA523 !important;
+}
+
+.ui-panel-titlebar{
+	background-color: #FAA523 !important;
+}
+
+.ui-button{
+	background-color: #FAA523 !important;
+}
+
+.itens-menu{
+	background-color: #FAA523 !important;
+}
+
+/*popup dos itens de menu da barra de menu*/
+.ui-menu-list{
+	background-color: #FAA523 !important;
+}
+
+/*caixa que comporta os itens de menu da barra de menus*/
+.ui-shadow{
+	width: 150px !important;
+}
+
+/*passar o mouse sobre os itens de menu*/
+.ui-menuitem-link:hover{
+	background-color: #ffffff !important;
+}
+
+
+.ui-menuitem-text{
+	font-size: 11pt;
+	/*Configura o text do menus*/
+}
+
+
+footer{
+	padding: 0px 8px;
+	margin-top: 10px;
+	margin-bottom: 10px;
+	text-align: center;
+}
+
+
+#login-dialog{
+	width: 290px;
+	margin: auto;
+	margin-top: 150px;
+}
+
+.grid-login{
+	background-color: #f2f2f2;
+	border-radius: 8px;
+	border: 1px solid #ccc;
+	margin-top: 8px;
+	padding: 10px;
+}
+
+
+.ui-panelgrid td{
+	height: 34px;
+}
+
+
+.painel-compacto td{
+	height: 27px;
+}
+
+.sem-bordas td, .sem-bordas tr{
+	border: none !important;
+}
+
+.ui-panel-content td{
+	padding: 0px !important;
+}
+
+.largura{
+	box-sizing: border-box;
+	width: 95% !important;
+	padding: 0px !important;
+	margin: auto;
+}
+
+.tema1{
+	background-color: #FAA523 !important;
+}
+
+
+.rotulo{
+	width: 150px;
+	font-weight: 500;
+}
+
+
