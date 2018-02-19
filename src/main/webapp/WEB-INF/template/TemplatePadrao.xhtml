@@ -14,6 +14,13 @@
 </h:head>
 
 <h:body>
+	<script>
+		function tratarRegistroMensagem(args){
+			if(!args.validationFailed){
+				registroMensagemDialog.hide();
+			}
+		}
+	</script>
 	<!-- BARRA DE CABEÇALHO - INICIO -->
 	<header id="cabecalho">
 		
@@ -162,23 +169,38 @@
 	</p:dialog>
 	
 	<!-- DIÁLOGO PARA MENSAGEM -->
-	<p:dialog header="Escolher tema" widgetVar="registroMensagemDialog" resizable="false"
-		modal="true">
+	<p:dialog header="Registrar mensagem" widgetVar="registroMensagemDialog" resizable="false"
+		modal="true" footer="Registro de mensagem">
 		<h:form>
+			<p:messages autoUpdate="true"/>
 			<p:panelGrid columns="2" styleClass="sem-bordas">
 				<p:outputLabel value="Responsável"/>
 				<h:outputText value="Jones Quito"/>
 				
+				<p:outputLabel value="Duração"/>
+				<p:selectOneMenu>
+					<f:selectItem itemLabel="08 hs"/>
+					<f:selectItem itemLabel="24 hs"/>
+					<f:selectItem itemLabel="48 hs"/>
+				</p:selectOneMenu>
+				
+				<p:outputLabel value="Visibilidade"/>
+				<p:selectOneMenu>
+					<f:selectItem itemLabel="Todos"/>
+					<f:selectItem itemLabel="Jones Quito"/>
+					<f:selectItem itemLabel="Artur Braga"/>
+					<f:selectItem itemLabel="Fausto Cruzeiro"/>
+				</p:selectOneMenu>
+				
 				<p:outputLabel value="Data"/>
 				<p:calendar readonly="true"/>
-				
-				<p:spacer/>
-				
-				<h:panelGroup>
-					<p:commandButton value="Atualizar"/>
-					<p:button value="Cancelar"/>
-				</h:panelGroup>
 			</p:panelGrid>
+			
+			<p:separator style="margin: 20px 0px;"/>
+			<p:inputTextarea rows="5" cols="60" required="true"/>
+			<p:separator style="margin: 20px 0px;"/>
+			<p:commandButton value="Atualizar" oncomplete="tratarRegistroMensagem(args)"/>
+			<p:button value="Cancelar"/>
 		</h:form>
 	</p:dialog>
 </h:body>
