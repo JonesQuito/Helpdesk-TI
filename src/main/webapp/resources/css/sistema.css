@@ -1,0 +1,220 @@
+@charset "utf-8";
+
+body {
+	font-size: 12px;
+	font-family: Arial, Helvetica, sans-serif;
+	margin: 0px;
+	font-weight: normal;
+}
+
+
+h1{
+	font-size: 24px;
+	font-weight: 500;
+	padding: 5px;
+	margin: 5px;
+}
+
+
+header{
+	padding: 5px 0px;
+	margin-bottom: 0px;
+	height: 70px;
+	background-color: #545454;
+	color: #fff;
+	box-shadow: 0px 2px 2px #ccc;
+}
+
+
+header #logo{
+	margin-left: 8px;
+	float: left;
+	
+}
+
+
+header #logo:hover{
+	-webkit-transform: scale(1.1);
+	margin-left: 15px;
+}
+
+
+header .barra-menu{
+	float: right;
+	margin-top: 2px;
+	margin-right: 8px;
+}
+
+
+#home-button{
+	float: left;
+	margin-top: 3px;
+	margin-left: 7px;
+	padding: 0px;
+	background-color: #C9C9C9;
+	border-radius: 4px;
+}
+
+
+#home-button:hover{
+	-webkit-transform: scale(1.1);
+	background-color: #87CEEB;
+}
+
+#home-button img{
+	margin: 0px 4px;
+	padding: 0px;
+	
+}
+
+
+#label-pagina{
+	/**/
+}
+
+
+
+#conteudo{
+	padding: 0px 8px;
+}
+
+
+.ui-layout-container{
+	margin-top: 0px;	
+}
+
+
+.ui-separator{
+	margin: 5px;
+}
+
+
+.ui-layout-unit{
+    /*border: none;*/
+    border-bottom: none;
+    border-top: none;
+    padding-top: 0px;
+}
+
+
+.ui-menubar{
+	padding: 5px !important;
+	
+}
+
+
+.ui-slidemenu{
+	width: 95% !important;
+	margin: auto;
+}
+
+.ui-panelmenu{
+	width: 95% !important;
+	margin: auto;
+}
+
+.ui-panelmenu-header{
+	font-size: 10pt;
+}
+
+
+.ui-menuitem-text{
+	/*Configura o text do menus*/
+}
+
+.largura-menu{
+		width: 90% !important;
+		padding: 0px;
+	}
+
+
+.largura{
+	box-sizing: border-box;
+	width: 95% !important;
+	padding: 0px !important;
+	margin: auto;
+}
+
+.tratativas{
+	box-sizing: border-box;
+	width: 95% !important;
+	padding: 0px !important;
+	margin: auto;
+
+}
+
+#dados-os{
+	width: 20% !important;
+	padding: 0px !important;
+	/*margin: auto;*/
+	float: left;
+	position: fixed;
+	margin-top: 0px;
+	
+}
+
+footer{
+	padding: 0px 8px;
+	margin: 0px;
+	margin-bottom: 0px;
+	text-align: center;
+}
+
+
+#login-dialog{
+	width: 290px;
+	margin: auto;
+	margin-top: 150px;
+}
+
+.grid-login{
+	background-color: #f2f2f2;
+	border-radius: 8px;
+	border: 1px solid #ccc;
+	margin-top: 8px;
+	padding: 10px;
+}
+
+
+.ui-panelgrid td{
+	height: 34px;
+}
+
+
+.painel-compacto td{
+	height: 27px;
+}
+
+.sem-bordas td, .sem-bordas tr{
+	border: none !important;
+}
+
+.ui-panel-content td{
+	padding: 0px !important;
+}
+
+.ui-panel-titlebar{
+	padding: 4px !important;
+}
+
+.ui-growl{
+	margin-top: 102px;
+}
+
+/*caixa que comporta os itens de menu da barra de menus*/
+.itens-menu .ui-shadow{
+	width: 150px !important;
+}
+
+.tema1{
+	background-color: #FAA523 !important;
+}
+
+
+.rotulo{
+	width: 150px;
+	font-weight: 500;
+}
+
+
+
