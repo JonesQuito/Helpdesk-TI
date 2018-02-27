@@ -8,7 +8,14 @@
 	
 	<ui:define name="titulo-pagina">Pesquisar OS</ui:define>
 	
+	<style>
 	
+	.descricao{
+		width: 120px !important;
+	}
+	
+	
+	</style>
 	<ui:define name="conteudo">
 		<h:form id="frm">
 			<p:dataTable value="#{historicoOSBean.listaChamados}" var="chamado" rowIndexVar="index" styleClass="largura">
@@ -17,8 +24,8 @@
 				</p:column>
 				
 				<p:column headerText="Descrição" style="width: 100px;">
-					<p:outputPanel>
-					<h:outputText value="INFORMAÇÕES: At least one JAR was scanned for TLDs yet contained no TLDs."/>
+					<p:outputPanel style="width:100px;">
+					<p:inputTextarea rows="3" cols="45" readonly="true"/>
 					</p:outputPanel>
 				</p:column>
 				
@@ -26,6 +33,40 @@
 				<p:column headerText="Status" width=""></p:column>
 			
 			</p:dataTable>
+			
+			<h:dataTable var="chamado" value="#{historicoOSBean.listaChamados}" columnClasses="descricao, descricao">
+				
+				<h:column>
+					<f:facet name="header">Número</f:facet>
+					20171100#{index + 1}
+				</h:column>
+				<h:column style="width:100px;">
+					<f:facet name="header">Descrição</f:facet>
+					sdfsfndfnsfnsfnsdfns,mdfnsm,fnsdsdfjslkdfjdjfakl<br/>
+					sdfsfndfnsfnsfnsdfns,mdfnsm,fnsdsdfjslkdfjdjfakl<br/>
+					sdfsfndfnsfnsfnsdfns,mdfnsm,fnsdsdfjslkdfjdjfakl<br/>
+				</h:column>
+				
+				<h:column>
+					<f:facet name="header">Status</f:facet>
+					Aberto
+				</h:column>
+			</h:dataTable>
+			
+			
+			<!-- 
+			
+			<table>
+			<ui:repeat var="chamado" value="#{historicoOSBean.listaChamados}">
+				<tr>
+					<td>20171100#{index + 1}</td>
+					<td>sdfsfndfnsfnsfnsdfns,mdfnsm,fnsdsdfjslkdfjdjfakl<br/>sdfsfndfnsfnsfnsdfns,mdfnsm,fnsdsdfjslkdfjdjfakl<br/></td>
+					<td>Aberto</td>
+				</tr>
+			</ui:repeat>
+			</table>
+			 -->
+			
 		</h:form>
 	</ui:define>
 		

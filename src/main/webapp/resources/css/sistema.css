@@ -201,6 +201,12 @@ footer{
 	margin-top: 102px;
 }
 
+.itens-menu{
+	margin: 0px !important;
+	padding: 0px !important;
+}
+
+
 /*caixa que comporta os itens de menu da barra de menus*/
 .itens-menu .ui-shadow{
 	width: 150px !important;

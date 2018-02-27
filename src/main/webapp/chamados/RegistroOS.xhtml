@@ -15,7 +15,7 @@
 				columnClasses="rotulo,campo" styleClass="sem-bordas painel-compacto">
 				
 				<p:outputLabel value="Nome" for="nome"/>
-				<p:inputText id="nome" size="60" maxlength="60" required="true"/>
+				<p:inputText id="nome" size="60" maxlength="60"/>
 				
 				<p:outputLabel value="Departamento" for="departamento"/>
 				<p:selectOneMenu id="departamento">
@@ -47,7 +47,7 @@
 				
 				<h:panelGroup/>
 				<h:panelGroup>
-					<p:commandButton value="Salvar" style="width: 20%; margin-right: 5%; margin-top: 20px !important;"/>		
+					<p:commandButton value="Salvar" style="width: 20%; margin-right: 5%; margin-top: 20px !important;" ajax="false"/>		
 					<p:button value="Cancelar" style="width: 20%;"/>			
 				</h:panelGroup>
 			</p:panelGrid>
